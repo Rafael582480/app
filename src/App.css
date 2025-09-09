@@ -1,0 +1,47 @@
+h1 {
+  color: black;
+  font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 350;
+  text-align: center;
+}
+
+.destaque {
+  color: blue;
+  font-weight: 450;
+}
+
+.forms {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.forms input {
+  padding: 0.5rem;
+  width: 15%;
+  border: 1px solid blue;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-right: none;
+  transition: 250ms;
+}
+
+.forms input:focus {
+  outline: none;
+  background-color: rgba(0, 0, 255, 0.199);
+}
+
+.forms button {
+  border: 1px solid blue;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-right: left;
+  transition: 250ms;
+}
+
+.forms button:hover {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}

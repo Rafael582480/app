@@ -1,16 +1,14 @@
+import { useState } from "react"
 import "./App.css"
+import Contador from "./Contador"
 
 function App() {
-  const enviar = document.querySelector("#env")
+  const [resp, setResp] = useState("")
+  const [saida, setSaida] = useState("")
+  const enviar = function() {
+    setSaida(resp.toLowerCase().trim())
+  }
 
-  enviar.addEventListener("click", function () {
-    const resp = document.querySelector("#resp").value.toLowerCase().trim() 
-    const saida = document.querySelector("#saida")
-    
-    saida.innerHTML = `
-        <h1>${resp}</h1>
-    `
-  })
   return (
     <>
       <div>
@@ -18,11 +16,15 @@ function App() {
       </div>
 
       <div class="forms">
-        <input id="resp" type="text" placeholder="Sua resposta..." />
-        <button id="env" type="button">Enviar</button>
+        <input id="resp" type="text" placeholder="Sua resposta..." value={resp} onChange={(e) => setResp(e.target.value)}/>
+        <button id="env" type="button" onClick={enviar}>Enviar</button>
       </div>
 
-      <div id="saida"></div>
+      <div id="saida">
+        {saida && <h1>{saida}</h1>}
+      </div>
+
+      <Contador/>
     </>
   )
 }
